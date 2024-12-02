@@ -25,16 +25,14 @@ def check_safety_level(report: List[int]) -> bool:
 def check_dampened_safety_level(report: List[int]) -> bool:
     if check_safety_level(report):
         return True
-    else:
-        i = 0
-        for value in report:
-            adjusted_report = report.copy()
-            adjusted_report.pop(i)
-            if check_safety_level(adjusted_report):
-                return True
-            else:
-                i += 1
-        return False
+
+    for i in range(len(report)):
+        print(report)
+        adjusted_report = report[:i] + report[i + 1 :]
+        print(adjusted_report)
+        if check_safety_level(adjusted_report):
+            return True
+    return False
 
 
 def solve_part_one(reports: List[int]) -> int:
