@@ -1,4 +1,9 @@
-from day3.day3 import get_valid_multiplier_pattern, remove_disabled_instructions
+from day3.day3 import (
+    get_valid_multiplier_pattern,
+    remove_disabled_instructions,
+    solve_part_one,
+    solve_part_two,
+)
 
 SAMPLE_DATA_P1 = (
     "xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))"
@@ -59,3 +64,21 @@ def test_return_should_equal_input_instructions():
     input = "[how()who(703,56)'$mul(472,810)from()->>}mul(5,623)what()}from(904,521)](who()<mul(476,844)!$ [mul(627,570)(}select()"
     result = remove_disabled_instructions(input)
     assert input == result, f"result should be equal to the input '{input}'"
+
+
+def test_solve_part_one():
+    expected_result = 161
+    result = solve_part_one(SAMPLE_DATA_P1)
+
+    assert (
+        expected_result == result
+    ), f"result should be '{expected_result}' not '{result}' "
+
+
+def test_solve_part_two():
+    expected_result = 48
+    result = solve_part_two(SAMPLE_DATA_P2)
+
+    assert (
+        expected_result == result
+    ), f"result should be '{expected_result}' not '{result}' "
