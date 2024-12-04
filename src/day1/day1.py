@@ -2,7 +2,7 @@ import re
 from collections import Counter
 from typing import List
 
-from utils.helpers import read_puzzle_input
+from utils.helpers import read_puzzle_input_as_string
 
 
 def clean_input(input: str) -> List[str]:
@@ -40,7 +40,7 @@ def solve_part_two(left_locations: List, right_locations: List) -> int:
 
 
 def main():
-    input = read_puzzle_input("src/day1/puzzle_input.txt")
+    input = read_puzzle_input_as_string(day=1)
     cleaned_input = clean_input(input)
 
     left_locations_list, right_locations_list = create_location_lists(cleaned_input)
