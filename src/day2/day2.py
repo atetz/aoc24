@@ -1,6 +1,6 @@
 from typing import List
 
-from utils.helpers import read_puzzle_input
+from utils.helpers import read_puzzle_input_as_string
 
 
 def extract_reports(report_data: str) -> List[int]:
@@ -27,9 +27,7 @@ def check_dampened_safety_level(report: List[int]) -> bool:
         return True
 
     for i in range(len(report)):
-        print(report)
         adjusted_report = report[:i] + report[i + 1 :]
-        print(adjusted_report)
         if check_safety_level(adjusted_report):
             return True
     return False
@@ -51,7 +49,7 @@ def solve_part_two(reports: List[int]) -> int:
 
 
 def main():
-    input = read_puzzle_input("src/day2/puzzle_input.txt")
+    input = read_puzzle_input_as_string(day=2)
     reports = extract_reports(input)
 
     solve_part_one(reports)

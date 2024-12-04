@@ -1,7 +1,7 @@
 import re
 from typing import List
 
-from utils.helpers import read_puzzle_input
+from utils.helpers import read_puzzle_input_as_single_line_string
 
 
 def get_valid_multiplier_pattern(cleaned_input: str) -> List:
@@ -27,11 +27,10 @@ def solve_part_two(cleaned_input: str) -> int:
 
 
 def main():
-    input = read_puzzle_input("src/day3/puzzle_input.txt")
-    cleaned_input = "".join(input.strip().splitlines())
+    input = read_puzzle_input_as_single_line_string(3)
 
-    print(f"Part one: {solve_part_one(cleaned_input)}")
-    print(f"Part two: {solve_part_two(cleaned_input)}")
+    print(f"Part one: {solve_part_one(input)}")
+    print(f"Part two: {solve_part_two(input)}")
 
 
 if __name__ == "__main__":
