@@ -27,3 +27,11 @@ def read_puzzle_input_as_single_line_string(
 ) -> str:
     with open(get_filename(day, sample)) as f:
         return "".join(f.read().splitlines())
+
+
+def read_puzzle_input_as_char_matrix(
+    day: int, sample: Optional[bool] = False
+) -> List[str]:
+    with open(get_filename(day, sample)) as f:
+        lines = f.read().splitlines()
+        return [[char for char in line] for line in lines]
