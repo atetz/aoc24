@@ -13,7 +13,6 @@ def validate_page_order(pages: List[int], ordering_rules: Dict[int, List[int]]):
             for rule in ordering_rules[page]:
                 if rule in pages and pages.index(page) > pages.index(rule):
                     return False
-
     return True
 
 
