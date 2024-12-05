@@ -65,7 +65,7 @@ def solve_part_two(
 
 
 def main() -> None:
-    input_matrix = read_puzzle_input_as_char_matrix(4)
+    input_matrix = read_puzzle_input_as_char_matrix(4, True)
 
     directions = {
         "north": (-1, 0),
