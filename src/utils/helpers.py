@@ -1,4 +1,5 @@
-from typing import List, Optional
+from collections import defaultdict
+from typing import Dict, List, Optional, Set, Tuple
 
 FILE_BASE_PATH = "src/day"
 
@@ -35,3 +36,17 @@ def read_puzzle_input_as_char_matrix(
     with open(get_filename(day, sample)) as f:
         lines = f.read().splitlines()
         return [[char for char in line] for line in lines]
+
+
+def read_puzzle_input_as_position_map(
+    day: int,
+    sample: Optional[bool] = False,
+) -> Dict[str, Set[Tuple[int, int]]]:
+    data = read_puzzle_input_as_list(day, sample)
+    char_position_map = defaultdict(set)
+
+    for row_id, row in enumerate(data):
+        for col_id, val in enumerate(row):
+            char_position_map[val].add((row_id, col_id))
+
+    return char_position_map
