@@ -1,0 +1,1 @@
+During debugging found flaw in logic, once a guard hits a block, the next block should also be validated.
