@@ -43,7 +43,7 @@ def solve_part_one(matrix, rows, cols, directions, trail_heads):
 
 
 def solve_part_two(matrix, rows, cols, directions, trail_heads):
-    # bfs implementation
+    # bfs implementation, while tracking how often the summit was visited.
     total = 0
     for point in trail_heads:
         queue = deque([point])
