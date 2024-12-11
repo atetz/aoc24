@@ -38,6 +38,14 @@ def read_puzzle_input_as_char_matrix(
         return [[char for char in line] for line in lines]
 
 
+def read_puzzle_input_as_int_matrix(
+    day: int, sample: Optional[bool] = False
+) -> List[str]:
+    with open(get_filename(day, sample)) as f:
+        lines = f.read().splitlines()
+        return [[int(char) for char in line] for line in lines]
+
+
 def read_puzzle_input_as_position_map(
     day: int,
     sample: Optional[bool] = False,
