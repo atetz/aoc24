@@ -1,0 +1,5 @@
+Naive solution vs alternative takeaways
+- should have started new for p2, reiterating fragmetns and defragmenting is very inefficient
+- focussed on keeping data close to example data, made it more complex. The -1 for empty is neater.
+- enumerating in a sum sum(i * x for i, x in enumerate(disk))
+
