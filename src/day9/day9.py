@@ -67,19 +67,15 @@ def get_empty_sectors(fragmented_disk: List[str]) -> Dict[int, int]:
 
 def defragment_disk(disk: List[str]) -> List[str]:
     file_sizes = get_file_sizes(disk)
-
     file_ids = set(int(fragment) for fragment in disk if fragment != ".")
 
-    # print(file_ids)
     for i in range(len(file_ids) - 1):
         file_id = max(file_ids)
         file_size = file_sizes[str(file_id)]
-        # print(f"file_id: {file_id}, file_size: {file_size}")
         empty_sectors = get_empty_sectors(disk)
         for index, size in sorted(empty_sectors.items()):
             if file_size <= size and disk.index(str(file_id)) >= index:
                 disk = ["." if x == str(file_id) else x for x in disk]
-                # print(f"File_id: {file_id} to: {index}")
                 for i in range(file_size):
                     disk.pop(index + (file_size - 1))
                     disk.insert(index, str(file_id))
@@ -94,7 +90,7 @@ def solve_part_two(data: str) -> int:
     return calculate_hash(disk)
 
 
-def main():
+def main() -> None:
     data = read_puzzle_input_as_single_line_string(9, True)
     print(f"part one: {solve_part_one(data)}")
     print(f"part two: {solve_part_two(data)}")
