@@ -50,7 +50,7 @@ def count_stones(stones: List[int], blinks: int) -> int:
 
 
 def main():
-    data = read_puzzle_input_as_string(11)
+    data = read_puzzle_input_as_string(11, True)
     stones = [int(stone) for stone in data.split(" ")]
 
     print(f"Part one: {count_stones(stones, 25)}")

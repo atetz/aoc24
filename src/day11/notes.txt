@@ -1,0 +1,6 @@
+Puzzle takeaways
+
+- Do not try to outsmart the puzzle when it says the order of the stones are preserved :)
+    - Trying to think of algorithm that predicts the stones based on test input did not result in right anwer because every stone leads a individual path.
+- looked for help on part two, hinted on caching, tried to implement my own as challenge.
+    - add every result of func to cache.
