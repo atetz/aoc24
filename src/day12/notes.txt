@@ -1,0 +1,4 @@
+Part two, count just the sides.
+number of sides == number of corners
+
+No need to trace outer edge of shape first. 
